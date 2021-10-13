@@ -48,7 +48,7 @@ int Stack::Pop()
 		return -1;
 	}
 	Element* e = endptr;
-	int data = endptr->data;
+	const int data = e->data;
 	endptr = e->prevptr;
 	delete e;
 	return data;
