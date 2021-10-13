@@ -15,19 +15,10 @@ Stack::~Stack()
 
 Stack& Stack::operator=(const Stack& stack)
 {
-	Stack temp;
-	Element* iter = stack.endptr;
-	while (iter != nullptr)
+	if (!stack.Empty())
 	{
-		temp.Push(iter->data);
-		iter = iter->prevptr;
+		endptr = new Element(*stack.endptr);
 	}
-
-	while (!temp.Empty())
-	{
-		Push(temp.Pop());
-	}
-
 	return *this;
 }
 
@@ -69,6 +60,16 @@ Stack::Element::Element(int val, Element* const ptr)
 	data(val),
 	prevptr(ptr)
 {
+}
+
+Stack::Element::Element(const Element& src)
+	:
+	data(src.data)
+{
+	if (src.prevptr != nullptr)
+	{
+		prevptr = new Element(*src.prevptr);
+	}
 }
 
 int Stack::Element::CountElements() const

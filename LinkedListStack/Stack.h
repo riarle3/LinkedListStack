@@ -7,6 +7,7 @@ private:
 	{
 	public:
 		Element(int val, Element* const ptr);
+		Element(const Element& src);
 		int CountElements() const;
 		Element* prevptr;
 		int data;
