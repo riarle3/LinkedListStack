@@ -7,14 +7,12 @@ Stack::Stack(const Stack& stack)
 
 Stack::~Stack()
 {
-	while (!Empty())
-	{
-		Pop();
-	}
+	Clear();
 }
 
 Stack& Stack::operator=(const Stack& stack)
 {
+	Clear();
 	if (!stack.Empty())
 	{
 		endptr = new Element(*stack.endptr);
@@ -55,6 +53,14 @@ bool Stack::Empty() const
 	return endptr == nullptr;
 }
 
+void Stack::Clear()
+{
+	while (!Empty())
+	{
+		Pop();
+	}
+}
+
 Stack::Element::Element(int val, Element* const ptr)
 	:
 	data(val),
@@ -69,6 +75,10 @@ Stack::Element::Element(const Element& src)
 	if (src.prevptr != nullptr)
 	{
 		prevptr = new Element(*src.prevptr);
+	}
+	else
+	{
+		prevptr = nullptr;
 	}
 }
 

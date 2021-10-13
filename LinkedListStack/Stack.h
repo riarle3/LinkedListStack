@@ -21,6 +21,7 @@ public:
 	int Pop();
 	int Size() const;
 	bool Empty() const;
+	void Clear();
 private:
 	Element* endptr = nullptr;
 };
