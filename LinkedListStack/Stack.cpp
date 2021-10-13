@@ -60,14 +60,7 @@ int Stack::Size() const
 	{
 		return 0;
 	}
-	int count = 1;
-	Element* iter = endptr;
-	while (iter->prevptr != nullptr)
-	{
-		iter = iter->prevptr;
-		count++;
-	}
-	return count;
+	return endptr->CountElements();
 }
 
 bool Stack::Empty() const
@@ -80,4 +73,13 @@ Stack::Element::Element(int val, Element* const ptr)
 	data(val),
 	prevptr(ptr)
 {
+}
+
+int Stack::Element::CountElements()
+{
+	if (prevptr == nullptr)
+	{
+		return 1;
+	}
+	return prevptr->CountElements() + 1;
 }
