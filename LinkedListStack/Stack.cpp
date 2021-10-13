@@ -1,9 +1,5 @@
 #include "Stack.h"
 
-Stack::Stack()
-{
-}
-
 Stack::Stack(const Stack& stack)
 {
 	*this = stack;

@@ -12,7 +12,7 @@ private:
 		int data;
 	};
 public:
-	Stack();
+	Stack() = default;
 	Stack(const Stack& stack);
 	~Stack();
 	Stack& operator=(const Stack& stack);
