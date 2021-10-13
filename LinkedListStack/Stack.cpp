@@ -75,7 +75,7 @@ Stack::Element::Element(int val, Element* const ptr)
 {
 }
 
-int Stack::Element::CountElements()
+int Stack::Element::CountElements() const
 {
 	if (prevptr == nullptr)
 	{

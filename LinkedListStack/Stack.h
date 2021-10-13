@@ -7,7 +7,7 @@ private:
 	{
 	public:
 		Element(int val, Element* const ptr);
-		int CountElements();
+		int CountElements() const;
 		Element* prevptr;
 		int data;
 	};
