@@ -11,7 +11,7 @@ Stack::Stack(const Stack& stack)
 
 Stack::~Stack()
 {
-	while (endptr != nullptr)
+	while (!Empty())
 	{
 		Pop();
 	}
@@ -43,7 +43,7 @@ void Stack::Push(int val)
 
 int Stack::Pop()
 {
-	if (endptr == nullptr)
+	if (Empty())
 	{
 		return -1;
 	}
@@ -56,7 +56,7 @@ int Stack::Pop()
 
 int Stack::Size() const
 {
-	if (endptr == nullptr)
+	if (Empty())
 	{
 		return 0;
 	}
