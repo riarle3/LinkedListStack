@@ -4,6 +4,7 @@
 #include <conio.h>
 #include "ChiliString.h"
 #include "Stack.h"
+#include <iostream>
 
 void test1()
 {
@@ -210,20 +211,6 @@ void test10()
 	}
 }
 
-void test10()
-{
-	Stack s;
-	s.Push(5);
-	s.Push(3);
-
-	s = s;
-
-	{
-		Stack s2;
-		s2.Push(828374);
-	}
-}
-
 int main()
 {
 	_CrtSetReportMode( _CRT_WARN,_CRTDBG_MODE_FILE );
@@ -248,42 +235,42 @@ int main()
 	// I15 homework stuff!!
 	/////////////////////////////////////////////////////////////////////
 	// level 1
-	//{
-	//	Stack s;
-	//	s.Push( 520 );
-	//	s.Push( 79 );
-	//	s.Push( 8168118 );
-	//	s.Push( 6311369 );
-	//
-	//	// multiply all elements by 10
-	//	for( auto& n : s )
-	//	{
-	//		n *= 10;
-	//	}
-	//
-	//	// print out all elements
-	//	for( auto n : s )
-	//	{
-	//		std::cout << n << ", ";
-	//	}
-	//	std::cout << std::endl;
-	//}
-	//// level 2 (uncomment to challenge)
-	//{
-	//	Stack s;
-	//	s.Push( 520 );
-	//	s.Push( 79 );
-	//	s.Push( 8168118 );
-	//	s.Push( 6311369 );
-	//
-	//	const Stack& cs = s;
-	//	for( auto& n : cs )
-	//	{
-	//		std::cout << n << ", ";
-	//	}
-	//	std::cout << std::endl;
-	//}
-	//
+	{
+		Stack s;
+		s.Push( 520 );
+		s.Push( 79 );
+		s.Push( 8168118 );
+		s.Push( 6311369 );
+	
+		// multiply all elements by 10
+		for( auto& n : s )
+		{
+			n *= 10;
+		}
+	
+		// print out all elements
+		for( auto n : s )
+		{
+			std::cout << n << ", ";
+		}
+		std::cout << std::endl;
+	}
+	// level 2 (uncomment to challenge)
+	{
+		Stack s;
+		s.Push( 520 );
+		s.Push( 79 );
+		s.Push( 8168118 );
+		s.Push( 6311369 );
+	
+		const Stack& cs = s;
+		for( auto& n : cs )
+		{
+			std::cout << n << ", ";
+		}
+		std::cout << std::endl;
+	}
+	
 	/////////////////////////////////////////////////////////////////////
 
 	_CrtDumpMemoryLeaks();
