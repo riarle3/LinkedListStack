@@ -184,6 +184,46 @@ void test9()
 	}
 }
 
+void test10()
+{
+	Stack s;
+	s.Push(5);
+	s.Push(3);
+
+	s = s;
+
+	{
+		Stack s2;
+		s2.Push(828374);
+		s2.Push(3454);
+		s2 = s;
+		s2.Pop();
+	}
+
+	if (s.Size() == 2 && s.Pop() == 3)
+	{
+		chili::print("    Test 10 passed!\n");
+	}
+	else
+	{
+		chili::print("*** Test 10 failed!\n");
+	}
+}
+
+void test10()
+{
+	Stack s;
+	s.Push(5);
+	s.Push(3);
+
+	s = s;
+
+	{
+		Stack s2;
+		s2.Push(828374);
+	}
+}
+
 int main()
 {
 	_CrtSetReportMode( _CRT_WARN,_CRTDBG_MODE_FILE );
@@ -202,6 +242,49 @@ int main()
 	test7();
 	test8();
 	test9();
+	test10();
+
+	/////////////////////////////////////////////////////////////////////
+	// I15 homework stuff!!
+	/////////////////////////////////////////////////////////////////////
+	// level 1
+	//{
+	//	Stack s;
+	//	s.Push( 520 );
+	//	s.Push( 79 );
+	//	s.Push( 8168118 );
+	//	s.Push( 6311369 );
+	//
+	//	// multiply all elements by 10
+	//	for( auto& n : s )
+	//	{
+	//		n *= 10;
+	//	}
+	//
+	//	// print out all elements
+	//	for( auto n : s )
+	//	{
+	//		std::cout << n << ", ";
+	//	}
+	//	std::cout << std::endl;
+	//}
+	//// level 2 (uncomment to challenge)
+	//{
+	//	Stack s;
+	//	s.Push( 520 );
+	//	s.Push( 79 );
+	//	s.Push( 8168118 );
+	//	s.Push( 6311369 );
+	//
+	//	const Stack& cs = s;
+	//	for( auto& n : cs )
+	//	{
+	//		std::cout << n << ", ";
+	//	}
+	//	std::cout << std::endl;
+	//}
+	//
+	/////////////////////////////////////////////////////////////////////
 
 	_CrtDumpMemoryLeaks();
 	while( !_kbhit() );
